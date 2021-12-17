@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chinese the Right Way</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+<!-- Sticky Navbar -->
+<ul class="navbar">
+    <li class="navbutton"><a href="../index.html" class="headerButton">Home</a></li>
+    <li class="navbutton"><a href="flashcards.html" class="headerButton">Flashcards</a></li>
+    <li class="navbutton"><a href="huamulan.php" class="headerButton">Hua Mulan</a></li>
+    <li class="navbutton"><a href="resources.php" class="headerButton">Resources</a></li>
+	<li class="navbutton"><a href="../renpy/index.html" class="headerButton">Novel</a></li>
+    <li class="navbutton"><a href="db.php" class="headerButton">Database</a></li>
+    <li class="navbutton"><a href="../php/login.php" class="headerButton">Account</a></li>
+</ul>
+
+<div class="grid-container">
+    <div class="left">
+        <a href="../pages/lesson3.html"><img src="../assets/img/previous.png" alt="Previous Lesson" style="width: 150px; height: 100px;"></a>
+    </div>
+
+    <div class="middle">
+        <h3>Lesson 4 (Di4 四 Ke4) – Days of the Week</h3>
+        <p>
+            Our schedules are usually built around the week, which is the norm in modern day China as well as the
+            rest of the world. How can I express days of the week in Chinese then?  This is the focus of this lesson,
+            and the word for “week” has two characters that are written as 星期 and pronounced Xing1 Qi1.
+        </p>
+
+        <p>
+            You might have already found two big challenges here. On the one hand, these two characters look
+            much more complicated than the ones we learned so far, and they appear to have parts in them. On the
+            other hand, how do we make the sounds represented by the phonetic symbols X and Q?
+        </p>
+
+        <p>
+            First off, let’s analyze the forms. Of the many thousands of Chinese characters in use today, most of
+            them are built with two or more parts known as bu4 shou3, which is commonly translated as “radicals.”
+            Each of the two new characters in this lesson has two radicals. It’s very important to understand and
+            memorize the meaning and/or sound of several dozen frequently used radicals in learning Chinese
+            characters.
+        </p>
+
+        <p>
+            Let’s first focus on 星, which literally means “star” (or any kind of heavenly body that
+            twinkles in the night sky). This character uses 日 (introduced in Lesson 3) on the top and
+            the radical 生 (sheng1) at the bottom. This method of forming a new word is referred to
+            as picto-phonetic, since one radical (日 in this case) indicates the meaning (which is a heavenly body, a
+            star) and the other indicates its sound (ing rhymes with eng). [Actually, its ancient bronze script form, as
+            shown above, may more clearly illustrate this point: a sky full of stars.]
+        </p>
+
+        <p>
+            期 is also picto-phonetic, with 月 on the right indicating the meaning (period) and 其(also
+            qi1) indicating  the sound. Put together as 星期, “period of stars,” or, more accurately,
+            “heavenly bodies,” is a perfect translation of the term “week,” a period of seven days that
+            are named after the Sun, the Moon, and the five planets Mars, Mercury, Jupiter, Venus, and Saturn, in
+            that order.
+        </p>
+
+        <p>Please check Appendix B for how to make the sounds X and Q.</p>
+
+        <p>
+            Now, let’s see how to express the seven days in a week. Sunday through Saturday are expressed as 星期
+            日, 星期一 through 星期六.
+        </p>
+
+        <p>[In daily conversation, 星期日 is also said 星期 tian1.]</p>
+
+        <p>
+            生 means “to produce” or “to give birth to.” Guess what 生日 means? You are right! It actually means
+            “birthday.”
+        </p>
+
+        <p>What about 日期? It’s the generic term for “date.”</p>
+
+    </div>
+
+    <div class="right">
+        <script src="popup.js"></script>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="../assets/img/next.png" style="width: 150px; height: 100px;"></span>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#" style="color:white;">Before You Go! True or False:</a>
+
+                <hr>
+                <p id="quiz" style="font-size:24px;color:white;"></p>
+                <script>
+                        let num = Math.floor((Math.random() * 3) + 1);
+                        if (num === 1) {
+                            document.getElementById("quiz").innerHTML = "Chinese characters can be made up of radicals, depicting meaning or pronunciation.";
+                        }
+                        else if (num === 2) {
+                            document.getElementById("quiz").innerHTML = "The character for 'star,' 星, is made up of 日 and 生.";
+                        }
+                        else if (num === 3) {
+                            document.getElementById("quiz").innerHTML = "The character for 'Tuesday' is 星期九";
+                        }
+                </script>
+                <hr>
+
+                <script>
+                        function answer(num, ans) {
+                            if ((num === 1 && ans === true) || (num === 2 && ans === true) || (num === 3 && ans === false)) {
+                                document.getElementById("result").innerHTML = "Correct!";
+                                document.getElementById("result").style.opacity = "100%";
+                                document.getElementById("next").style.opacity = "100%";
+                                document.getElementById("flash").style.opacity = "100%";
+                            }
+                            else {
+                                document.getElementById("result").innerHTML = "Incorrect!";
+                                document.getElementById("result").style.opacity = "100%";
+                            }
+                        }
+                </script>
+                <a href="#" onclick="answer(num,true)"><img src="../assets/img/true.png" alt="True" style="width: 10%; height: 7.5%; margin-left: 22.5%; margin-top: 0.85%"></a>
+                <a href="#" onclick="answer(num,false)"><img src="../assets/img/false.png" alt="False" style="width: 10%; height: 7.5%; margin-left: 37%;"></a>
+                <br><br><br><br><br><br><hr>
+                <p id="result" style="font-size:24px;color:white;opacity:0%">Test</p>
+                <br><br>
+                <a href="../pages/lesson5.html"><img src="../assets/img/next.png" id="next" alt="False" style="width: 10%; height: 7.5%; margin-left: 32%;margin-top:0.7%;opacity:0%"></a>
+                <a href="../pages/flashcards4/flashcards4-xing.html"><img src="../assets/img/flash.png" id="flash" alt="Flashcards" style="width: 10%; height: 7.5%; margin-left: 17.5%;opacity:0%"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="images">
+        <img src="../assets/img/lesson4img1.png" alt="lesson4img1" style="width:100px;height:150px;margin-left:105%;margin-top:10%;">
+        <img src="../assets/img/lesson4img2.png" alt="lesson4img2" style="width:100px;height:150px;margin-left:90%;margin-top:10%;">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Cody "Tarkus" Lee, Brad Powell</p>
+        <p>©MIT License - 2019</p>
+        <p>Stock Photos from <a href="https://www.pexels.com/" target="_blank">pexels.com</a></p>
+    </footer>
+</div>
+
+</body>
+</html>

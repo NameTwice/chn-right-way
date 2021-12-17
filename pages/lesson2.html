@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chinese the Right Way</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+<!-- Sticky Navbar -->
+<ul class="navbar">
+    <li class="navbutton"><a href="../index.html" class="headerButton">Home</a></li>
+    <li class="navbutton"><a href="flashcards.html" class="headerButton">Flashcards</a></li>
+    <li class="navbutton"><a href="huamulan.php" class="headerButton">Hua Mulan</a></li>
+    <li class="navbutton"><a href="resources.php" class="headerButton">Resources</a></li>
+	<li class="navbutton"><a href="../renpy/index.html" class="headerButton">Novel</a></li>
+    <li class="navbutton"><a href="db.php" class="headerButton">Database</a></li>
+    <li class="navbutton"><a href="../php/login.php" class="headerButton">Account</a></li>
+</ul>
+
+<div class="grid-container">
+    <div class="left">
+        <a href="../pages/lesson1.html"><img src="../assets/img/previous.png" alt="Previous Lesson" style="width: 150px; height: 100px;"></a>
+    </div>
+
+    <div class="middle">
+        <h3>Lesson 2 (Di4 二 Ke4) More Number Words: All the Way to Ten</h3>
+        <p>
+            Let's continue with what we learned in Lesson One and learn how to write and pronounce numbers one
+            through ten. Listed below are the strokes and phonetic symbols used.
+        </p>
+
+        <p>
+            We'll learn these out of order. Let's learn to write ten (or shi2) next: 十, which is 一heng1 一 shu4 (or
+            vertical stroke) as pronounced in Mandarin Chinese.
+        </p>
+
+        <p>
+            [When writing a character with multiple strokes, it's important to write the strokes in the right order.
+            Check out other rules in Appendix C. The rule here is: “First draw heng2 and then shu4.”]
+        </p>
+
+        <p>
+            Next comes the character for eight, 八, with two new kinds of stroke, pie3 and na4 (diagnose strokes to
+            the left and right). [The rule applicable here is: “First draw pie3 and then na4.”]
+        </p>
+
+        <p>
+            Next, let's write the character for six, 六, which has a new kind of stroke, dian3, for the "dot" on the very
+            top and at the bottom right. [The rule here is: “From top down.”]
+        </p>
+
+        <p>Next comes five, 五, where an elbow stroke, heng2-zhe2, is used in the middle.</p>
+
+        <p>
+            An extension to heng2-zhe2 is used in the character for nine, 九, which has 一 pie3 and heng2-zhe2-
+            wan1-gou1. In this new term, wan1 means curve, and gou1 means hook.
+        </p>
+
+        <p>The character for seven, 七, includes another type, wan1-gou1, and, as you can see, is shu4-wan1-gou1.</p>
+
+        <p>
+            Finally, let’s introduce the character for four: 四, which includes 一shu4, heng2-zhe2(-gou1), (inside the
+            half-open enclosure formed by the first two strokes) pie3, shu4-wan1, and 一 heng2 (“to close the box
+            after it’s filled with its contents,” a rule applicable here).
+        </p>
+
+        <img src="../assets/img/lesson2img1.png" alt="lesson2img1" style="width: 80%; height: 25%; margin-left: 10%;">
+        <img src="../assets/img/lesson2img2.png" alt="lesson2img2" style="width: 80%; height: 25%; margin-left: 10%;">
+    </div>
+
+    <div class="right">
+        <script src="popup.js"></script>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="../assets/img/next.png" style="width: 150px; height: 100px;"></span>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#" style="color:white;">Before You Go! True or False:</a>
+
+                <hr>
+                <p id="quiz" style="font-size:24px;color:white;"></p>
+                <script>
+                        let num = Math.floor((Math.random() * 3) + 1);
+                        if (num === 1) {
+                            document.getElementById("quiz").innerHTML = "The numbers 4-10 in Chinese are based on the knot-tying counting system.";
+                        }
+                        else if (num === 2) {
+                            document.getElementById("quiz").innerHTML = "The character for 'six' is 十.";
+                        }
+                        else if (num === 3) {
+                            document.getElementById("quiz").innerHTML = "4-10 in Chinese, in order, is 'si wu liu qi ba jiu shi.'";
+                        }
+                </script>
+                <hr>
+
+                <script>
+                        function answer(num, ans) {
+                            if ((num === 1 && ans === true) || (num === 2 && ans === false) || (num === 3 && ans === true)) {
+                                document.getElementById("result").innerHTML = "Correct!";
+                                document.getElementById("result").style.opacity = "100%";
+                                document.getElementById("next").style.opacity = "100%";
+                                document.getElementById("flash").style.opacity = "100%";
+                            }
+                            else {
+                                document.getElementById("result").innerHTML = "Incorrect!";
+                                document.getElementById("result").style.opacity = "100%";
+                            }
+                        }
+                </script>
+                <a href="#" onclick="answer(num,true)"><img src="../assets/img/true.png" alt="True" style="width: 10%; height: 7.5%; margin-left: 22.5%; margin-top: 0.85%"></a>
+                <a href="#" onclick="answer(num,false)"><img src="../assets/img/false.png" alt="False" style="width: 10%; height: 7.5%; margin-left: 37%;"></a>
+                <br><br><br><br><br><br><hr>
+                <p id="result" style="font-size:24px;color:white;opacity:0%">Test</p>
+                <br><br>
+                <a href="../pages/lesson3.html"><img src="../assets/img/next.png" id="next" alt="False" style="width: 10%; height: 7.5%; margin-left: 32%;margin-top:0.7%;opacity:0%"></a>
+                <a href="../pages/flashcards2/flashcards2-si.html"><img src="../assets/img/flash.png" id="flash" alt="Flashcards" style="width: 10%; height: 7.5%; margin-left: 17.5%;opacity:0%"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Cody "Tarkus" Lee, Brad Powell</p>
+        <p>©MIT License - 2019</p>
+        <p>Stock Photos from <a href="https://www.pexels.com/" target="_blank">pexels.com</a></p>
+    </footer>
+</div>
+
+</body>
+</html>

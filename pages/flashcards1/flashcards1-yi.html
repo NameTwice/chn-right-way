@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chinese the Right Way</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.2/dist/hanzi-writer.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 95px;
+        }
+
+            .sidebar a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidebar a:hover {
+                    color: #f1f1f1;
+                }
+
+            .sidebar .closebtn {
+                position: absolute;
+                top: 0;
+                right: 60px;
+                font-size: 36px;
+                margin-left: 50px;
+                padding-top: 85px;
+            }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+            .openbtn:hover {
+                background-color: #444;
+            }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 120px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sticky Navbar -->
+<ul class="navbar">
+    <li class="navbutton"><a href="../../index.html" class="headerButton">Home</a></li>
+    <li class="navbutton"><a href="../flashcards.html" class="headerButton">Flashcards</a></li>
+    <li class="navbutton"><a href="../huamulan.php" class="headerButton">Hua Mulan</a></li>
+    <li class="navbutton"><a href="../resources.php" class="headerButton">Resources</a></li>
+	<li class="navbutton"><a href="../../renpy/index.html" class="headerButton">Novel</a></li>
+    <li class="navbutton"><a href="../db.php" class="headerButton">Database</a></li>
+    <li class="navbutton"><a href="../../php/login.php" class="headerButton">Account</a></li>
+</ul>
+
+<script>
+function changeImage(stroke)
+{
+    var img = document.getElementById("character");
+        if (stroke === 1) {
+            img.src = "../../assets/img/flash1/onefull.png";
+        }
+        else if (stroke === 2) {
+            img.src = "../../assets/img/flash1/onestrokeanim.gif";
+        }
+
+    return false;
+ }
+
+    function myFunction() {
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = "一";
+        msg.lang = 'zh'
+        window.speechSynthesis.speak(msg);
+    }
+</script>
+
+<div id="mySidebar" class="sidebar">
+    <a href="#" class="openbtn" onclick="closeNav()">Close Stroke Bar</a>
+    <hr>
+    <a href="#" onclick="changeImage(1);"><img src="../../assets/img/strokebuttonfull.png" alt="Full" style="width:100px;height:50px;"></button></a>
+    <hr>
+    <a href="#" onclick="changeImage(2);"><img src="../../assets/img/animate.png" alt="Animate" style="width:100px;height:50px;"></button></a>
+    <hr>
+    <a href="#" onclick="myFunction();"><img src="../../assets/img/speak.png" alt="Speak" style="width:100px;height:50px;"></button></a>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">Strokes</button>  
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+
+<div class="grid-container">
+    <div class="middle" style="margin-left:35%;">
+        <p style="font-size: 36px; margin-left: 15%;">ONE</p>
+        <img id="character" src="../../assets/img/flash1/onefull.png" style="width: 350px; height: 350px;" />
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br>
+        <a href="flashcards1-er.html"><img src="../../assets/img/next.png" alt="Next" style="width:150px;height:100px;margin-left:22.65%;"></a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Cody "Tarkus" Lee, Brad Powell</p>
+        <p>©MIT License - 2019</p>
+        <p>Stock Photos from <a href="https://www.pexels.com/" target="_blank">pexels.com</a></p>
+    </footer>
+</div>
+
+</body>
+</html>

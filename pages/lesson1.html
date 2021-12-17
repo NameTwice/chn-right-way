@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chinese the Right Way</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+<!-- Sticky Navbar -->
+<ul class="navbar">
+    <li class="navbutton"><a href="../index.html" class="headerButton">Home</a></li>
+    <li class="navbutton"><a href="flashcards.html" class="headerButton">Flashcards</a></li>
+    <li class="navbutton"><a href="huamulan.php" class="headerButton">Hua Mulan</a></li>
+    <li class="navbutton"><a href="resources.php" class="headerButton">Resources</a></li>
+	<li class="navbutton"><a href="../renpy/index.html" class="headerButton">Novel</a></li>
+    <li class="navbutton"><a href="db.php" class="headerButton">Database</a></li>
+    <li class="navbutton"><a href="../php/login.php" class="headerButton">Account</a></li>
+</ul>
+
+<div class="grid-container">
+    <div class="left">
+        <p></p>
+    </div>
+
+    <div class="middle" style="margin-left:10%;margin-top:0.175%;">
+        <h3>Lesson 1(Di4 Yi1 Ke4) As Simple as One Two Three</h3>
+        <p>Let's imagine you are an eight-year-old kid who is going to school for the first time (as would be the norm in the Zhou Dynasty over 2000 years ago). The Master’s first lesson would be how to write the words for one, two, and three. Although back in those days you would use a brush to write, today you can use whatever is handy and write with your teacher.</p>
+
+        <blockquote>
+            <p>The Master would say "Draw one horizontal stroke," 一.  "That's one." [Isn't it obvious?]</p>
+            <p>"Draw two horizontal strokes," 二.  "That's two." [That’s just what I was thinking.]</p>
+            <p>"Draw three horizontal strokes," 三.  "That's three." [I got it ALL! It's so simple that I don't even need to learn more.]</p>
+        </blockquote>
+
+        <p>According to a journal (Ying4Xie2 Lu4) written by Liu2 Yuan2Qing1 in the late 16th century (Ming Dynasty), that's exactly what happened when a worthy landlord hired a teacher to homeschool his son so that the son would become the first literate person in his family. As indicated in the story, this first lesson turned out to be the boy’s last since the boy insisted that he “got it ALL” and made his father send the teacher away. The boy was then asked to write a dinner invitation to Mr. Wan, his father’s friend. After waiting a whole morning for the invitation, the father found his son struggling in the study. "It's not my fault,” the son said.  “It's all because this guy's name is 10,000. [That's what the word Wan4 means when used as a number.] I can only manage to draw 500 strokes so far!"</p>
+
+        <p>Don’t worry about how to write other number words for the moment. We have a more urgent question to answer: How are the three little words pronounced?</p>
+        <p>Let's list the three characters under their phonetic symbols.</p>
+
+        <blockquote>
+            <p>yī'  èr  sān</p><p>一  二  三</p>
+        </blockquote>
+
+        <p>There are four tones (or si4 sheng1) used in Mandarin Chinese.</p>
+
+        <p>The horizontal stroke is called heng2. We'll learn more numerical words and more strokes in the next lesson.</p>
+
+        <blockquote>
+            <p>Read Out Loud</p><p>一二三，三二一。</p>
+            <p>一二三sì wŭ liù qī。 [Can you make the sounds for numbers 4 through 7?]</p>
+            <p>Qī liù wŭ sì三二一。</p>
+            <p>Xuē xí zhōng wén zhēn róng yì。[Learning Chinese is really easy.]</p>
+        </blockquote>
+
+    </div>
+
+    <div class="right">
+            <script src="popup.js"></script>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="../assets/img/next.png" style="width: 150px; height: 100px; margin-left: 45%;"></span>
+            <div id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="overlay-content">
+                    <a href="#" style="color:white;">Before You Go! True or False:</a>
+
+                    <hr>
+                    <p id="quiz" style="font-size:24px;color:white;"></p>
+                    <script>
+                        let num = Math.floor((Math.random() * 3) + 1);
+                        if (num === 1) {
+                            document.getElementById("quiz").innerHTML = "All numbers in Chinese are represented with that many horizontal strokes.";
+                        }
+                        else if (num === 2) {
+                            document.getElementById("quiz").innerHTML = "The numbers 1-3 in order, written phonetically, are 'er, yi, san'.";
+                        }
+                        else if (num === 3) {
+                            document.getElementById("quiz").innerHTML = "三 is the Chinese character for the number 3.";
+                        }
+                    </script>
+                    <hr>
+
+                    <script>
+                        function answer(num, ans) {
+                            if ((num === 1 && ans === false) || (num === 2 && ans === false) || (num === 3 && ans === true)) {
+                                document.getElementById("result").innerHTML = "Correct!";
+                                document.getElementById("result").style.opacity = "100%";
+                                document.getElementById("next").style.opacity = "100%";
+                                document.getElementById("flash").style.opacity = "100%";
+                            }
+                            else {
+                                document.getElementById("result").innerHTML = "Incorrect!";
+                                document.getElementById("result").style.opacity = "100%";
+                            }
+                        }
+                    </script>
+                    <a href="#" onclick="answer(num,true)"><img src="../assets/img/true.png" alt="True" style="width: 10%; height: 7.5%; margin-left: 22.5%; margin-top: 0.85%"></a>
+                    <a href="#" onclick="answer(num,false)"><img src="../assets/img/false.png" alt="False" style="width: 10%; height: 7.5%; margin-left: 37%;"></a>
+                    <br><br><br><br><br><br><hr>
+                    <p id="result" style="font-size:24px;color:white;opacity:0%">Test</p>
+                    <br><br>
+                    <a href="../pages/lesson2.html"><img src="../assets/img/next.png" id="next" alt="False" style="width: 10%; height: 7.5%; margin-left: 32%;margin-top:0.7%;opacity:0%"></a>
+                    <a href="../pages/flashcards1/flashcards1-yi.html"><img src="../assets/img/flash.png" id="flash" alt="Flashcards" style="width: 10%; height: 7.5%; margin-left: 17.5%;opacity:0%"></a>
+                </div>
+            </div>
+        <img src="../assets/img/lesson1img1.png" alt="lesson1img1" style="width:100%;height:25%;margin-top:120%;">
+
+    </div>
+    <!-- Footer -->
+    <footer class="footer">  
+        <p>Cody "Tarkus" Lee, Brad Powell</p>
+        <p>©MIT License - 2019</p>
+        <p>Stock Photos from <a href="https://www.pexels.com/" target="_blank">pexels.com</a></p>
+    </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* color variables for easier editing */
+:root{
+	--red-bg: #fe5f55;
+	--off-black: #454545;
+	--off-white: #fafcf5;
+}
+
+* { box-sizing: border-box; }
+html, body {
+	margin: 0;
+	background-color: var(--off-white);
+	width: 100%;
+	height: 100%;
+	font-family: 'Roboto', "微软雅黑", STXihei, "华文细黑", sans-serif;;
+	font-size: 16px;
+	z-index: 1000;
+} 
+
+.header {
+	height: 400px;
+	width: 100%;
+	text-align: center;
+	line-height: 1rem;
+	padding: 150px 0px 100px 0px;
+	background-image: linear-gradient(to bottom, rgba(255,255,255,0.75) 0%,rgba(255,255,255,0.75) 100%), url("../assets/img/stockwriting.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.header h1 {
+	font-size: 5rem;
+	font-weight: 900;
+	color: var(--off-black);
+}
+.header p {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #595959;
+}
+
+.navbar {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	background-color: var(--red-bg);
+	position: -webkit-sticky; /* Safari */
+	position: sticky;
+	top: 0px;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	z-index: 1001;
+	line-height: 1.5rem;
+}
+.navbutton {
+	float: left;
+	font-weight: bold;
+}
+.navbutton a {
+	display: block;
+	color: var(--off-white);
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+.navbutton a:hover {
+	color: var(--off-black);
+	background-color: var(--off-white);
+}
+
+.grid-container {
+	display: grid;
+	min-height: 100%;
+	width: 100%;
+	grid-template-areas: 
+	/*'header header header header header header' */
+	'left middle middle middle middle right' 
+	'footer footer footer footer footer footer';
+	grid-column-gap: 30px;
+} 
+.left, .right, .middle .images {
+	padding: 20px 0px 20px 0px;
+	font-size: 18px;
+}
+.left {
+	padding-left: 30px;
+	grid-area: left;
+}
+.middle { grid-area: middle; }
+.right {
+	padding-right: 30px;
+	grid-area: right;
+}
+.images {
+	grid-area:middle;
+}
+.footer {
+	grid-area: footer;
+	background-color: var(--red-bg);
+	color: var(--off-white);
+	text-align: center;
+	padding: 2rem;
+	line-height: 0.5rem;
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+	.grid-container  {
+		grid-template-areas: 
+		'left left left left left left' 
+		'middle middle middle middle middle middle' 
+		'right right right right right right' 
+		'footer footer footer footer footer footer';
+	}
+}
+.grid-container a {
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: bold;
+}
+.grid-container a:visited { color: var(--off-black); }
+.grid-container a:hover { color: var(--red-bg); }
+.grid-container img {
+	border-radius: 8px;
+	height: 300px;
+	width: 400px;
+	float: left;
+	padding: 1.2rem 1rem 1rem 0rem;
+}
+.grid-container h1 { color: var(--off-black); }
+.grid-container h3 { color: var(--off-black); }
+.grid-container p  { color: var(--off-black); }
+.footer p {
+	color: var(--off-white);
+	font-size: 1rem;
+}
+.footer a {
+	text-decoration: underline;
+	color: var(--off-white);
+}
+.footer a:visited {
+	text-decoration: underline;
+	color: var(--off-white);
+}
+.footer a:hover {
+	text-decoration: underline;
+	color: var(--off-black);
+}
+
+.tooltip {
+	position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+/* Tooltip text */
+.tooltip .tooltiptext {
+	font-size: 16px;
+	visibility: hidden;
+	width: 250px;
+	background-color: #ffffcc;
+	color: var(--off-black);
+	text-align: left;
+	padding: 10px 20px 10px 20px;
+	border-radius: 6px;
+	line-height: 2rem;
+	
+	/* Position the tooltip text - see examples below! */
+	position: absolute;
+	z-index: 1;
+	top: -75%;
+	left: 125%; 
+}
+
+
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext { visibility: visible; }
+
+ul {
+  border-left: 5px solid var(--red-bg);
+  background-color: #f1f1f1;
+  list-style-type: none;
+  padding: 10px 20px;
+  line-height: 2.2rem;
+}
+
+.overlay {
+	height: 0%;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0, 0.9);
+	overflow-y: hidden;
+	transition: 0.5s;
+}
+
+.overlay-content {
+	position: relative;
+	top: 10%;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+.overlay a {
+	padding: 8px;
+	text-decoration: none;
+	font-size: 36px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+	.overlay a:hover, .overlay a:focus {
+		color: #f1f1f1;
+	}
+
+.overlay .closebtn {
+	position: absolute;
+	top: 35px;
+	right: 45px;
+	font-size: 60px;
+}

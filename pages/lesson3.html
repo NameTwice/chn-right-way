@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chinese the Right Way</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
+</head>
+<body>
+
+<!-- Sticky Navbar -->
+<ul class="navbar">
+    <li class="navbutton"><a href="../index.html" class="headerButton">Home</a></li>
+    <li class="navbutton"><a href="flashcards.html" class="headerButton">Flashcards</a></li>
+    <li class="navbutton"><a href="huamulan.php" class="headerButton">Hua Mulan</a></li>
+    <li class="navbutton"><a href="resources.php" class="headerButton">Resources</a></li>
+	<li class="navbutton"><a href="../renpy/index.html" class="headerButton">Novel</a></li>
+    <li class="navbutton"><a href="db.php" class="headerButton">Database</a></li>
+    <li class="navbutton"><a href="../php/login.php" class="headerButton">Account</a></li>
+</ul>
+
+<div class="grid-container">
+    <div class="left">
+        <a href="../pages/lesson2.html"><img src="../assets/img/previous.png" alt="Previous Lesson" style="width: 150px; height: 100px; "></a>
+    </div>
+
+    <div class="middle">
+        <h3>Lesson 3 (Di4 三 Ke4) Numbers within a Hundred and Date Expressions</h3>
+        <p>
+            Now that we know the words for numbers, we will see how to express any date (month and day) in the
+            Gregorian calendar. This system was adopted by China in 1912, right after the fall of the Qing1 Dynasty.
+            (We will learn about the traditional Chinese calendar later, which is often referred to as the Xia4 Li4 or
+            the Xia4 System, named after the very first Dynasty of which archeological evidence is yet to be found.)
+        </p>
+
+        <p>
+            We need to know the characters for month and day since a calendar date is expressed using the YYYY
+            Year MM Month DD Day pattern.
+        </p>
+
+        <img src="../assets/img/lesson3img1.png" alt="lesson3img1" style="width: 80%; height: 40%; margin-left: 10%;">
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <p>
+            The first day of a month is 一日, the fifth 五日, and so on. What about the eleventh? It’s simply 十一日.
+            And 二十三日? Yes, it’s the 23rd.
+        </p>
+
+        <p>
+            Congratulations! You’ve just learned how to express a day in a month and a number less than one
+            hundred as a bonus. It’s so simple, right? What is more: There is no need to learn new words for the
+            twelve months, or 十二ge4 月.  (Plus, there is normally no plural form in Chinese; instead, a count word
+            like ge4 is used.) The twelve months are simply 一月, 二月, ..., 十月, 十一月, and 十二月
+        </p>
+
+        <p>
+            To put it together, New Year’s Day is 一月一日, Christmas 十二月二十五日, Halloween 十月三十一日,
+            and April Fool’s Day 四月一日.
+        </p>
+
+        <img src="../assets/img/lesson3img2.png" alt="lesson3img2" style="width: 80%; height: 30%; margin-left: 10%;">
+
+    </div>
+
+    <div class="right">
+        <script src="popup.js"></script>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="../assets/img/next.png" style="width: 150px; height: 100px;"></span>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="overlay-content">
+                <a href="#" style="color:white;">Before You Go! True or False:</a>
+
+                <hr>
+                <p id="quiz" style="font-size:24px;color:white;"></p>
+                <script>
+                        let num = Math.floor((Math.random() * 3) + 1);
+                        if (num === 1) {
+                            document.getElementById("quiz").innerHTML = "The date December 25th is written in Chinese as 十二月二十五日.";
+                        }
+                        else if (num === 2) {
+                            document.getElementById("quiz").innerHTML = "Multiples of ten in Chinese are written in the form 十[digit], such as 十五 = 50.";
+                        }
+                        else if (num === 3) {
+                            document.getElementById("quiz").innerHTML = "月 is the character for 'week.'";
+                        }
+                </script>
+                <hr>
+
+                <script>
+                        function answer(num, ans) {
+                            if ((num === 1 && ans === true) || (num === 2 && ans === false) || (num === 3 && ans === false)) {
+                                document.getElementById("result").innerHTML = "Correct!";
+                                document.getElementById("result").style.opacity = "100%";
+                                document.getElementById("next").style.opacity = "100%";
+                                document.getElementById("flash").style.opacity = "100%";
+                            }
+                            else {
+                                document.getElementById("result").innerHTML = "Incorrect!";
+                                document.getElementById("result").style.opacity = "100%";
+                            }
+                        }
+                </script>
+                <a href="#" onclick="answer(num,true)"><img src="../assets/img/true.png" alt="True" style="width: 10%; height: 7.5%; margin-left: 22.5%; margin-top: 0.85%"></a>
+                <a href="#" onclick="answer(num,false)"><img src="../assets/img/false.png" alt="False" style="width: 10%; height: 7.5%; margin-left: 37%;"></a>
+                <br><br><br><br><br><br><hr>
+                <p id="result" style="font-size:24px;color:white;opacity:0%">Test</p>
+                <br><br>
+                <a href="../pages/lesson4.html"><img src="../assets/img/next.png" id="next" alt="False" style="width: 10%; height: 7.5%; margin-left: 32%;margin-top:0.7%;opacity:0%"></a>
+                <a href="../pages/flashcards3/flashcards3-ri.html"><img src="../assets/img/flash.png" id="flash" alt="Flashcards" style="width: 10%; height: 7.5%; margin-left: 17.5%;opacity:0%"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Cody "Tarkus" Lee, Brad Powell</p>
+        <p>©MIT License - 2019</p>
+        <p>Stock Photos from <a href="https://www.pexels.com/" target="_blank">pexels.com</a></p>
+    </footer>
+</div>
+
+</body>
+</html>

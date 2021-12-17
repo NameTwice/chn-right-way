@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chinese the Right Way</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.2/dist/hanzi-writer.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .item1 { grid-area: header; }
+        .item2 { grid-area: menu; }
+        .item3 { grid-area: main; }
+        .item4 { grid-area: right; }
+        .item5 { grid-area: footer; }
+
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 95px;
+        }
+
+            .sidebar a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidebar a:hover {
+                    color: #f1f1f1;
+                }
+
+            .sidebar .closebtn {
+                position: absolute;
+                top: 0;
+                right: 60px;
+                font-size: 36px;
+                margin-left: 50px;
+                padding-top: 85px; 
+            }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+            .openbtn:hover {
+                background-color: #444;
+            }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 120px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+        }
+
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+            'header header header header header header'
+            'menu main main main main right'
+            'footer footer footer footer footer footer';
+            grid-gap: 10px;
+        }
+
+        .grid-container > div {
+          text-align: center;
+          padding: 20px 0;
+          font-size: 30px;
+        }
+        
+        .button {
+          display: inline-block;
+          border-radius: 4px;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 20px;
+          padding: 10px;
+          width: 150px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 5px;
+        }
+
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+        .button:hover span {
+          padding-right: 25px;
+        }
+
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+
+        #character-target-div {
+          align-self: center;
+          transform: translate(0, -25px)
+        }
+        
+        #character-target-text-div {
+          font-size: 50px;
+          color: #000000;
+          align-self: center;
+          transform: translate(0, -450px);
+        }
+
+        #button1 {
+          align-self: center;
+          background-color: #6600ff;
+          transform: translate(170px, -50px);
+        }
+
+        #button2 {
+          background-color: var(--red-bg);
+          transform: translate(-150px, 20px);
+        }
+
+        #button3 {
+          background-color: var(--red-bg);
+          transform: translate(-16px, 20px);
+        }
+
+        .item5 {
+          color: white;
+          text-decoration: none;
+          text-align: center;
+          background-color: var(--red-bg);
+        }
+
+</style>
+</head>
+<body>
+
+<!-- Sticky Navbar -->
+<ul class="navbar">
+    <li class="navbutton"><a href="../index.html" class="headerButton">Home</a></li>
+    <li class="navbutton"><a href="flashcards.html" class="headerButton">Flashcards</a></li>
+    <li class="navbutton"><a href="huamulan.php" class="headerButton">Hua Mulan</a></li>
+    <li class="navbutton"><a href="resources.php" class="headerButton">Resources</a></li>
+	<li class="navbutton"><a href="../renpy/index.html" class="headerButton">Novel</a></li>
+    <li class="navbutton"><a href="db.php" class="headerButton">Database</a></li>
+    <li class="navbutton"><a href="../php/login.php" class="headerButton">Account</a></li>
+</ul>
+
+<div class="grid-container">
+    <div class="item3">
+     <div id="character-target-div"></div>
+     <div id="character-target-text-div"></div>
+     <script src="../pages/flashcards.js"></script>
+     <div class="middle">
+         <a href="flashcards1/flashcards1-yi.html"><img src="../assets/img/flash1/onefull.png" alt="Yi" style="width: 15%; height: 15%; margin-left: 12.5%; margin-top: 10%;"></a>
+         <a href="flashcards2/flashcards2-si.html"><img src="../assets/img/flash1/twofull.png" alt="Er" style="width: 15%; height: 15%; margin-left: 0%; margin-top: 10%;"></a>
+         <a href="flashcards3/flashcards3-ri.html"><img src="../assets/img/flash1/threefull.png" alt="San" style="width: 15%; height: 15%; margin-left: 0%; margin-top: 10%; "></a>
+         <a href="flashcards4/flashcards4-xing.html"><img src="../assets/img/flash2/fourfull.png" alt="Si" style="width: 15%; height: 15%; margin-left: 0%; margin-top: 10%; "></a>
+         <a href="flashcards5/flashcards5-zi.html"><img src="../assets/img/fivefull.png" alt="Wu" style="width: 15%; height: 15%; margin-left: 0%; margin-top: 10%; "></a>
+         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+     </div>
+
+    <!-- Footer -->
+    <footer class="item5">
+        <p>Cody "Tarkus" Lee, Brad Powell</p>
+        <p>©MIT License - 2019</p>
+        <p>Stock Photos from <a href="https://www.pexels.com/" target="_blank">pexels.com</a></p>
+    </footer>
+</div>
+
+</body>
+</html>

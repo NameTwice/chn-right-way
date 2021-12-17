@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chinese the Right Way</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../../css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.2/dist/hanzi-writer.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 95px;
+        }
+
+            .sidebar a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+                .sidebar a:hover {
+                    color: #f1f1f1;
+                }
+
+            .sidebar .closebtn {
+                position: absolute;
+                top: 0;
+                right: 60px;
+                font-size: 36px;
+                margin-left: 50px;
+                padding-top: 85px;
+            }
+
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+
+            .openbtn:hover {
+                background-color: #444;
+            }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 120px;
+            }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navbar -->
+    <ul class="navbar">
+        <li class="navbutton"><a href="../../index.html" class="headerButton">Home</a></li>
+        <li class="navbutton"><a href="../flashcards.html" class="headerButton">Flashcards</a></li>
+        <li class="navbutton"><a href="../huamulan.php" class="headerButton">Hua Mulan</a></li>
+        <li class="navbutton"><a href="../resources.php" class="headerButton">Resources</a></li>
+        <li class="navbutton"><a href="../../renpy/index.html" class="headerButton">Novel</a></li>
+        <li class="navbutton"><a href="../db.php" class="headerButton">Database</a></li>
+        <li class="navbutton"><a href="../../php/login.php" class="headerButton">Account</a></li>
+    </ul>
+
+    <script>
+        function changeImage(stroke) {
+            var img = document.getElementById("character");
+            if (stroke === 1) {
+                img.src = "../../assets/img/flash3/daystroke1.png";
+            }
+            else if (stroke === 2) {
+                img.src = "../../assets/img/flash3/daystroke2.png";
+            }
+            else if (stroke === 3) {
+                img.src = "../../assets/img/flash3/daystroke3.png";
+            }
+            else if (stroke === 4) {
+                img.src = "../../assets/img/flash3/daystroke4.png";
+            }
+            else if (stroke === 5) {
+                img.src = "../../assets/img/flash3/dayfull.png";
+            }
+            else if (stroke === 6) {
+                img.src = "../../assets/img/flash3/daystrokeanim.gif";
+            }
+
+            return false;
+        }
+
+        function evo(time) {
+            var img = document.getElementById("character");
+            var exp = document.getElementById("exp");
+
+            if (time === 1) {
+
+                img.src = "../../assets/img/flash3/dayold1.png";
+                exp.style.opacity = "100%";
+                exp.innerHTML = "The character is meant to look like the sun.";
+            }
+            else if (time === 2) {
+                img.src = "../../assets/img/flash3/dayold2.png";
+                exp.style.opacity = "100%";
+                exp.innerHTML = "The character is still meant to look like the sun.";
+            }
+            else if (time === 3) {
+                img.src = "../../assets/img/flash3/dayfull.png";
+                exp.style.opacity = "100%";
+                exp.innerHTML = "Modern rendition.";
+            }
+
+            return false;
+        }
+
+        function myFunction() {
+            var msg = new SpeechSynthesisUtterance();
+            msg.text = "日";
+            msg.lang = 'zh'
+            window.speechSynthesis.speak(msg);
+        }
+    </script>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="#" class="openbtn" onclick="closeNav()">Close Stroke Bar</a>
+        <hr>
+        <a href="#" onclick="changeImage(1);"><img src="../../assets/img/strokebutton1.png" alt="Stroke1" style="width:100px;height:50px;"></button></a>
+        <a href="#" onclick="changeImage(2);"><img src="../../assets/img/strokebutton2.png" alt="Stroke2" style="width:100px;height:50px;"></button></a>
+        <a href="#" onclick="changeImage(3);"><img src="../../assets/img/strokebutton3.png" alt="Stroke3" style="width:100px;height:50px;"></button></a>
+        <a href="#" onclick="changeImage(4);"><img src="../../assets/img/strokebutton4.png" alt="Stroke3" style="width:100px;height:50px;"></button></a>
+        <a href="#" onclick="changeImage(5);"><img src="../../assets/img/strokebuttonfull.png" alt="Full" style="width:100px;height:50px;"></button></a>
+        <hr>
+        <a href="#" onclick="changeImage(6);"><img src="../../assets/img/animate.png" alt="Animate" style="width:100px;height:50px;"></button></a>
+        <hr>
+        <a href="#" onclick="myFunction();"><img src="../../assets/img/speak.png" alt="Speak" style="width:100px;height:50px;"></button></a>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">Strokes</button>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+
+    <div class="grid-container">
+        <div class="middle" style="margin-left:35%;">
+            <p style="font-size:36px;margin-left:10%;">DAY/SUN</p>
+            <img id="character" src="../../assets/img/flash3/dayfull.png" style="width: 350px; height: 350px;" />
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+            <br><br><br><br><br>
+            <a href="#" onclick="evo(1);"><img src="../../assets/img/oldest.png" alt="oldest" style="width:100px;height:80px;margin-left:3%;"></button></a>
+            <a href="#" onclick="evo(2);"><img src="../../assets/img/older.png" alt="older" style="width:100px;height:80px;"></button></a>
+            <a href="#" onclick="evo(3);"><img src="../../assets/img/newer.png" alt="newer" style="width:100px;height:80px;"></button></a>
+            <br><br><br><br><br>
+            <p id="exp" style="opacity: 0%; font-size: 24px; color:black;text-align:center;margin-right:64%;">Test</p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Cody "Tarkus" Lee, Brad Powell</p>
+            <p>©MIT License - 2019</p>
+            <p>Stock Photos from <a href="https://www.pexels.com/" target="_blank">pexels.com</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>
